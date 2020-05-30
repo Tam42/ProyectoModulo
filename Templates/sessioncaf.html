@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>inicio</title>
+  </head>
+  <body>
+    <form action='../Dynamics/cafeteria.php' method='post'>
+      <fieldset>
+        Usuario<input type='text' name='usuario'>
+        <br>Contraseña<input type='password' name='contraseña' pattern='[A-Za-z0-9@#$%?¡!&/=+*-]{10,25}' title='Una contraseña segura tiene uns longitud entre 10 y 25 caracteres, tiene almenos una letra mayúscula o minúscula, un dígito, o los símbolos @ # $ % ? ¡ ! & / = + * - '>
+        <br>Categoria: <select name='categoria'>
+          <option value='alumno' name='alumno'>Alumno</option>
+          <option value='trabajador' name='trabajador'>Trabajador</option>
+          <option value='profesor_o_funcionario' name='profesor_o_funcionario'>Profesor o funcionario</option><br>
+        </select>
+        <br>Tipo: <select name='tipo'>
+          <option value='Cliente' name='Cliente'>Cliente</option>
+          <option value='Supervisor de pedidos' name='Supervisor de pedidos'>Supervisor de pedidos</option>
+          <option value='Administrador de sistemas' name='Administrador de sistemas'>Administrador de sistemas</option><br>
+        </select>
+        <br><input type='submit' value='Ingresar'>
+      </fieldset>
+    </form>
+  </body>
+</html>
