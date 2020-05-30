@@ -74,7 +74,7 @@
                                 </optgroup>
                               </select>
                             </p>
-                            <p>Contraseña:<input type='password' name='passProf1' placeholder='Minimo 10 caracteres' pattern='[A-Za-z0-9@#$%?¡!&/=+*-]{10,25}' title='Una contraseña segura tiene uns longitud entre 10 y 25 caracteres, tiene almenos una letra mayúscula o minúscula, un dígito, o los símbolos @ # $ % ? ¡ ! & / = + * - ' required></p>
+                            <p>Contraseña:<input type='password' name='passProf1' placeholder='Minimo 10 caracteres' pattern='[A-Za-z0-9@#$%?¡!&/+-]{10,25}' title='Una contraseña segura tiene uns longitud entre 10 y 25 caracteres, tiene almenos una letra mayúscula o minúscula, un dígito, o los símbolos @ # $ % ? ¡ ! & / + - ' required></p>
                             <input type='submit' value='Registrarse'>";
                 }
                 //Si el primer if no se hizo pasara al segundo en el cual revisara si $B es igual que $U, si es igual entrara
@@ -119,7 +119,7 @@
                                 </optgroup>
                               </select>
                             </p>
-                            <p>Contraseña:<input type='password' name='passAl1' placeholder='Minimo 10 caracteres' pattern='[A-Za-z0-9@#$%]{10,25}' title='Una contraseña segura tiene uns longitud entre 10 y 25 caracteres, tiene almenos una letra mayúscula o minúscula, un dígito, o los símbolos '@', '#', '$' y '%'' required></p>
+                            <p>Contraseña:<input type='password' name='passAl1' placeholder='Minimo 10 caracteres' pattern='[A-Za-z0-9@#$%?¡!&/+-]{10,25}' title='Una contraseña segura tiene uns longitud entre 10 y 25 caracteres, tiene almenos una letra mayúscula o minúscula, un dígito, o los símbolos @ # $ % ? ¡ ! & / + - ' required></p>
                             <input type='submit' value='Registrarse'>";
                 }
                 //Si no entro a la segunda condicion revisara si $C es igual a $U, si es igual entrara
@@ -133,7 +133,7 @@
                             <p>Nombre: <input type='text' name='NombreTrab' placeholder='Ejemplo: Carlos' pattern='[a-zA-ZÁÉÍÓÚÑáéíóúñ]{3,20}' title='Este no es un nombre' required></p>
                             <p>Apellido Paterno: <input type='text' name='apPaternoTrab' placeholder='Ejemplo: Perez' pattern='[a-zA-ZÁÉÍÓÚÑáéíóúñ]{3,20}' title='Este no es un apellido' required></p>
                             <p>Apellido Materno: <input type='text' name='apMaternoTrab' placeholder='Ejemplo: Hernandez' pattern='[a-zA-ZÁÉÍÓÚÑáéíóúñ]{3,20}' title='Este no es un apellido' required></p>
-                            <p>Contraseña:<input type='password' name='passTrab1' placeholder='Minimo 10 caracteres' pattern='[A-Za-z0-9@#$%]{8,20}' title='Una contraseña segura tiene uns longitud entre 10 y 25 caracteres, tiene almenos una letra mayúscula o minúscula, un dígito, o los símbolos '@', '#', '$' y '%'' required></p>
+                            <p>Contraseña:<input type='password' name='passTrab1' placeholder='Minimo 10 caracteres' pattern='[A-Za-z0-9@#$%?¡!&/+-]{10,25}' title='Una contraseña segura tiene uns longitud entre 10 y 25 caracteres, tiene almenos una letra mayúscula o minúscula, un dígito, o los símbolos @ # $ % ? ¡ ! & / + - ' required></p>
                             <input type='submit' value='Registrarse'>";
                 }
           ?>
