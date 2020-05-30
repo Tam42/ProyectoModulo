@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <!--Ponerle estilo al div-->
     <style>
       div{
         width: 400px;
@@ -8,18 +9,24 @@
       }
     </style>
     <meta charset="utf-8">
+    <!--El titulo que aprecera en la pestaña del navegador-->
     <title>Registro</title>
   </head>
   <body>
-				<div>
-
-              <?php
+      <!--Indicar una division-->
+			<div>
+          <!--Insertar un php-->
+          <?php
+                //La variable que sera recibida del formulario de RegistroCafe.html
                 $U=strip_tags($_POST['usuario']);
+                //Variables de tipo cadena que seran definidas
                 $A="Profesor_o_Funcionario";
                 $B="Alumno";
                 $C="Trabajador";
-
+                //Condicion de si $A igual que $U hara el if
                 if ($A==$U){
+                  /*Imprimira un formulario que sera enviado por metodo post a ValidacionProfesorCafe.php y que el contenido del formulario sera un fieldset que lo contendra y la leyenda Ingresa, te pedira el RFC, Nombre, Apellido Paterno y Materno,
+                  Te pedira tambien la fecha de nacimeinto y por medio de un select el profesor seleccionara su Colegio, y por ultimo le pedira una contraseña segura*/
                   echo"<form method='post' action='ValidacionProfesorCafe.php'>
                         <fieldset>
                           <legend><h1>Ingresa</h1></legend>
@@ -70,7 +77,10 @@
                             <p>Contraseña:<input type='password' name='passProf1' placeholder='Minimo 10 caracteres' pattern='[A-Za-z0-9@#$%?¡!&/=+*-]{10,25}' title='Una contraseña segura tiene uns longitud entre 10 y 25 caracteres, tiene almenos una letra mayúscula o minúscula, un dígito, o los símbolos @ # $ % ? ¡ ! & / = + * - ' required></p>
                             <input type='submit' value='Registrarse'>";
                 }
+                //Si el primer if no se hizo pasara al segundo en el cual revisara si $B es igual que $U, si es igual entrara
                 if ($B==$U){
+                  /*Imprimira un formulario que sera enviado por metodo post a ValidacionAlumnoCafe.php y que el contenido del formulario sera un fieldset que lo contendra y la leyenda Ingresa, te pedira el Numero de cuenta, Nombre, Apellido Paterno y Materno,
+                  te pedira por medio de un select el alumno escogera su grupo, y por ultimo le pedira una contraseña segura*/
                   echo"<form method='post' action='ValidacionAlumnoCafe.php'>
                         <fieldset>
                           <legend><h1>Ingresa</h1></legend>
@@ -112,7 +122,10 @@
                             <p>Contraseña:<input type='password' name='passAl1' placeholder='Minimo 10 caracteres' pattern='[A-Za-z0-9@#$%]{10,25}' title='Una contraseña segura tiene uns longitud entre 10 y 25 caracteres, tiene almenos una letra mayúscula o minúscula, un dígito, o los símbolos '@', '#', '$' y '%'' required></p>
                             <input type='submit' value='Registrarse'>";
                 }
+                //Si no entro a la segunda condicion revisara si $C es igual a $U, si es igual entrara
                 if ($C==$U){
+                  /*Imprimira un formulario que sera enviado por metodo post a ValidacionTrabajadorCafe.php y que el contenido del formulario sera un fieldset que lo contendra y la leyenda Ingresa, te pedira el Numero de Trabajador, Nombre, Apellido Paterno y Materno,
+                  y por ultimo le pedira una contraseña segura*/
                   echo"<form method='post' action='ValidacionTrabajadorCafe.php'>
                         <fieldset>
                           <legend><h1>Ingresa</h1></legend>
@@ -123,9 +136,9 @@
                             <p>Contraseña:<input type='password' name='passTrab1' placeholder='Minimo 10 caracteres' pattern='[A-Za-z0-9@#$%]{8,20}' title='Una contraseña segura tiene uns longitud entre 10 y 25 caracteres, tiene almenos una letra mayúscula o minúscula, un dígito, o los símbolos '@', '#', '$' y '%'' required></p>
                             <input type='submit' value='Registrarse'>";
                 }
-              ?>
-              </fieldset>
-            </form>
-          </div>
-        </body>
+          ?>
+          </fieldset>
+        </form>
+      </div>
+  </body>
 </html>
