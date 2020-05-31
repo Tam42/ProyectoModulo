@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Registro</title>
+    <link rel="stylesheet" type="text/css" href="../statics/css/formularioreg.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sacramento">
+  </head>
+  <body>
+    <!--Header-->
+      <header>
+        <a id="logo-header" href="../templates/Principal.html"><img src="../statics/img/logo.png" class="logo">
+      </a>
+       <nav>
+        <ul>
+          <li><a href="../Dynamics/menu4.php"><i class="fa fa-cutlery"></i></a></li>
+          <li><a href="historia.html">Conócenos</a></li>
+          <li><a href="Mapa.html"><i class="fa fa-map-o"></i></a></li>
+          <li><a href="sessioncaf.html">Acceder</a></li>
+          <li><a href="RegistroCafe.html">Crear Cuenta</a></li>
+        </ul>
+      </nav>
+     </header>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <!--Formulario-->
+     <div>
+		    <form method="post" action="../Dynamics/RegistroUsuarioCafe.php" >
+          <fieldset>
+            <legend><h3>Selecciona Usuario</h3></legend>
+              <br>
+              <br>
+              <!--Tipo cliente-->
+              <p>Tipo de cliente:
+                <select name="usuario">
+                  <option>Profesor_o_Funcionario</option>
+                  <option>Alumno</option>
+                  <option>Trabajador</option>
+                </select></p>
+              <br>
+              <br>
+              <input class="send" type="submit" value="Validar">
+            </fieldset>
+          </form>
+			</div>
+    <!--Footer-->
+    <footer>
+      <nav>
+         <ul>
+            <li class="footer">Copyright &copy; 2020<li>
+            <li class="footer">Todos los derechos reservados.</li>
+         <ul>
+      </nav>
+    </footer>
+  </body>
+</html>
