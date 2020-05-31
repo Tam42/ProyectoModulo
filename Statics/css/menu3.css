@@ -1,0 +1,121 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  overflow-x: hidden;
+}
+/*Header*/
+
+#logo-header {
+	float: left;
+	padding: 3px 0 0 20px;
+	text-decoration: none;
+}
+	#logo-header:hover {
+		color: #0b76a6;
+	}
+
+  .logo{
+    width: 70px;
+    height: 60px;
+    float: right;
+  }
+
+header {
+  background-color: #000000;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+header nav {
+  float: right;
+}
+
+header nav ul {
+  list-style: none;
+  overflow: hidden;
+}
+
+header nav ul li {
+  float: left;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+header nav ul li a {
+  display: block;
+  padding: 25px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+header nav ul li:hover {
+  background-color: #243140;
+}
+
+/*Formulario*/
+
+.send{
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h3{
+  font-family: "Sacramento";
+  font-size: 35px;
+  color: #D59F0F ;
+  padding: 0px;
+  line-height: 55px;
+  text-align: center;
+}
+
+li{
+  font-family: cursive;
+}
+.foto {
+  width: 300px;
+  margin-top:25px;
+  margin-left:25px;
+}
+
+/*Footer*/
+
+.footer{
+  margin-bottom: 10px;
+  text-align:center;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+
+footer{
+  background-color: #000000;
+  width: 100%;
+}
+footer nav {
+  float: center;
+  width: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+footer nav ul {
+  list-style: none;
+  overflow: hidden;
+}
+
+footer nav ul li {
+  float: center;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  padding: 3px;
+}
