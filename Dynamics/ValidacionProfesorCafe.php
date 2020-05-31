@@ -1,4 +1,31 @@
 <?php
+//Cabecera y header
+echo '<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!--El titulo que aprecera en la pestaña del navegador-->
+    <title>Registro</title>
+    <link rel="stylesheet" type="text/css" href="../Statics/css/formularioreg.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sacramento">
+  </head>
+  <body>
+      <header>
+        <a id="logo-header" href="../Templates/Principal.html"><img src="../Statics/img/logo.png" class="logo">
+      </a>
+       <nav>
+        <ul>
+        <li><a href="menu4.php"><i class="fa fa-cutlery"></i></a></li>
+        <li><a href="../Templates/Mapa.html"><i class="fa fa-map-o"></i></a></li>
+        <li><a href="../Templates/sessioncaf.html">Acceder</a></li>
+        </ul>
+      </nav>
+     </header>
+     <br>
+     <br>
+     <br>
+     <br>';
 //Incluir la base de datos
 include("bd.php");
   //Declarar la base de datos en la que seguardaran los datos ingresados
@@ -63,7 +90,7 @@ include("bd.php");
       //Si existe un registro hara el if
       if($count == 1){
           //Imprimira que el usuario ya existe
-          echo "Registro existente<br>";
+          echo "<h3>Registro existente</h3><br>";
           //Imprimira un link que te direccionara de nuevo al formulario de registro
           echo"<a href='../Templates/RegistroCafe.html'>Volver al formulario</a>";
       }
@@ -74,16 +101,27 @@ include("bd.php");
           //Si se logro la insercion con la conexion hara el if
           if(mysqli_query($conexion, $sql)){
             //Imprimira un mensaje de que se registro
-            echo "Registro exitoso";
+            echo "<h3>Registro exitoso</h3>";
             //Lo mandara a la pagina de inicio
-            echo "<a href=''></a>";
+            echo "<a href='../Templates/sessioncaf.html'>Acceder</a>";
           }
           else{
             //Imprimira que hay un error
-            echo "Hubo un problema inentelo mas tarde :(";
+            echo "<h3>Hubo un problema inentelo mas tarde :(</h3>";
             //Imprimira un error
-            echo "<a href=''></a>";
+            echo "<a href='../Templates/Principal.html'>Regresar</a>";
           }
       }
   }
+//Footer
+  echo'<footer>
+         <nav>
+           <ul>
+            <li class="footer">Copyright &copy; 2020<li>
+            <li class="footer">Todos los derechos reservados.</li>
+           <ul>
+         </nav>
+      </footer>
+  </body>
+</html>';
  ?>

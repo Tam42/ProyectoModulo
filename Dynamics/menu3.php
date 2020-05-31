@@ -2,19 +2,29 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <style media="screen">
-      li{
-        font-family: cursive;
-      }
-      .foto {
-        width: 300px;
-        margin-top:25px;
-        margin-left:25px;
-      }
-    </style>
     <title>Menú</title>
+    <link rel="stylesheet" type="text/css" href="../Statics/css/agregar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sacramento">
   </head>
   <body>
+  <!--Header-->
+    <header>
+      <a id="logo-header" href="../Templates/Principal.html"><img src="../Statics/img/logo.png" class="logo">
+    </a>
+     <nav>
+      <ul>
+        <li><a href="menu3.php"><i class="fa fa-cutlery"></i></a></li>
+        <li><a href="../Templates/Mapa.html"><i class="fa fa-map-o"></i></a></li>
+        <li><a href="../Templates/privacidad.html">Privacidad</a></li>
+        <li><a href="logout.php">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+   </header>
+   <br>
+   <br>
+   <br>
+   <br>
     <?php
       echo "<h1>Menú</h1>";
       include("bd.php");
@@ -42,5 +52,14 @@
       }
       mysqli_close($conexion); //Cierro mi base de datos por seguridad
     ?>
+    <!--Footer-->
+    <footer>
+        <nav>
+           <ul>
+              <li class="footer">Copyright &copy; 2020<li>
+              <li class="footer">Todos los derechos reservados.</li>
+           <ul>
+        </nav>
+    </footer>
   </body>
 </html>

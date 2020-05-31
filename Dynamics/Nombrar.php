@@ -1,4 +1,33 @@
 <?php
+
+echo '<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Agregar</title>
+    <link rel="stylesheet" type="text/css" href="../Statics/css/agregar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sacramento">
+  </head>
+  <body>
+  <!--Header-->
+    <header>
+      <a id="logo-header" href="../Templates/Principal.html"><img src="../Statics/img/logo.png" class="logo">
+    </a>
+     <nav>
+      <ul>
+        <li><a href="menu4.php"><i class="fa fa-cutlery"></i></a></li>
+        <li><a href="../Templates/Mapa.html"><i class="fa fa-map-o"></i></a></li>
+        <li><a href="../Templates/privacidad.html">Privacidad</a></li>
+        <li><a href="logout.php">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+   </header>
+   <br>
+   <br>
+   <br>
+   <br>';
+
 include("bd.php");
 $nombre=(isset($_POST['Nombre']) && $_POST['Nombre'] !="") ? $_POST['Nombre']:"";
 $descripcion=(isset($_POST['Descripcion']) && $_POST['Descripcion'] !="") ? $_POST['Descripcion']:"";
@@ -72,5 +101,16 @@ $respuesta = mysqli_query($conexion, $consulta);
 mysqli_close($conexion);
 header("Location:../templates/Agregar.php")
 
+
+echo '<footer>
+    <nav>
+       <ul>
+          <li class="footer">Copyright &copy; 2020<li>
+          <li class="footer">Todos los derechos reservados.</li>
+       <ul>
+    </nav>
+</footer>
+</body>
+</html>';
 
 ?>

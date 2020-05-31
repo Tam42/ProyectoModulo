@@ -2,9 +2,32 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <!--El titulo que aprecera en la pestaña del navegador-->
     <title>Cafeteria</title>
+    <link rel="stylesheet" type="text/css" href="../Statics/css/formularioreg.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sacramento">
   </head>
   <body>
+  </head>
+  <body>
+    <!--Header-->
+      <header>
+        <a id="logo-header" href="../Templates/Principal.html"><img src="../Statics/img/logo.png" class="logo">
+      </a>
+       <nav>
+        <ul>
+          <li><a href="menu3.php"><i class="fa fa-cutlery"></i></a></li>
+          <li><a href="../Templates/Mapa.html"><i class="fa fa-map-o"></i></a></li>
+          <li><a href="../Templates/privacidad.html">Privacidad</a></li>
+			    <li><a href="logout.php">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+     </header>
+     <br>
+     <br>
+     <br>
+     <br>
     <?php
       include("bd.php");
       //Conexion más base y despliegue de errores
@@ -49,7 +72,7 @@
             }
             if(isset($_COOKIE["bloquear"]))
             {
-              echo "EL usuario ha sido bloqueado";
+              echo "<h3>EL usuario ha sido bloqueado</h3>";
             }
           }
           $categoria = $_SESSION['categoria'];
@@ -75,12 +98,12 @@
               }
               else
               {
-                echo "No es la contraseña<br>";
+                echo "<h3>No es la contraseña</h3><br>";
               }
             }
             else
             {
-              echo "Usuario no valido";
+              echo "<h3>Usuario no valido</h3>";
             }
           }
           if ($eleccion == "Supervisor de pedidos")
@@ -97,12 +120,12 @@
               }
               else
               {
-                echo "No es la contraseña<br>";
+                echo "<h3>No es la contraseña</h3><br>";
               }
             }
             else
             {
-              echo "Usuario no valido";
+              echo "<h3>Usuario no valido</h3>";
             }
           }
           if ($eleccion == "Administrador de sistemas")
@@ -119,16 +142,25 @@
               }
               else
               {
-                echo "No es la contraseña<br>";
+                echo "<h3>No es la contraseña</h3><br>";
               }
             }
             else
             {
-              echo "Usuario no valido";
+              echo "<h3>Usuario no valido</h3>";
             }
           }
         }
       }
     ?>
+    <!--Footer-->
+    <footer>
+        <nav>
+           <ul>
+              <li class="footer">Copyright &copy; 2020<li>
+              <li class="footer">Todos los derechos reservados.</li>
+           <ul>
+        </nav>
+    </footer>
   </body>
   </html>

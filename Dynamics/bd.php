@@ -1,4 +1,5 @@
 <?php
+  $base="cafeteria";
   define("DBUSER","root");
   define("DBHOST","localhost");
   define("PASSWORD","");

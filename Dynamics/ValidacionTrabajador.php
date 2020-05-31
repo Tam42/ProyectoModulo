@@ -1,34 +1,31 @@
 <?php
-include("bd.php");
-
-$conexion = connectDB2("prueba3");
-if(!$conexion){
-  echo mysqli_connnect_error()."<br>";
-  echo mysqli_connnect_errno()."<br>";
-  exit();
-}
-else{
-  $PK= $_POST['NumTrabajador'];
-  $Name= $_POST['NombreTrab'];
-  $ApPt= $_POST['aptPaternoTrab'];
-  $ApMt= $_POST['aptMaternoTrab'];
-  $Pass= $_POST['passTrab1'];
-
-  $sal = rand();
-  echo "$sal";
-  $password_con_sal_hasheados = $Pass+$sal;
-  echo"$password_con_sal_hasheados";
-
-
-  $sql = "INSERT INTO Trabajador VALUES ('$PK', \"$Name\", \"$ApPt\", \"$ApMt\", \"$Pass\" )";
-  if(mysqli_query($conexion, $sql)){
-    echo "Insercion exitosa";
-  }
-  else{
-      echo "Hubo un problema";
-  }
-}
-
+//Cabecera y header
+echo '<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!--El titulo que aprecera en la pestaña del navegador-->
+    <title>Registro</title>
+    <link rel="stylesheet" type="text/css" href="../Statics/css/formularioreg.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sacramento">
+  </head>
+  <body>
+      <header>
+        <a id="logo-header" href="../Templates/Principal.html"><img src="../Statics/img/logo.png" class="logo">
+      </a>
+       <nav>
+        <ul>
+        <li><a href="menu4.php"><i class="fa fa-cutlery"></i></a></li>
+        <li><a href="./Templates/Mapa.html"><i class="fa fa-map-o"></i></a></li>
+        <li><a href="./Templates/sessioncaf.html">Acceder</a></li>
+        </ul>
+      </nav>
+     </header>
+     <br>
+     <br>
+     <br>
+     <br>';
 //Incluir la base de datos
 include("bd.php");
   //Declarar la base de datos en la que seguardaran los datos ingresados
@@ -41,7 +38,7 @@ include("bd.php");
     //Para salir
     exit();
   }
-  //Si encontro la conexio
+  //Si encontro la conexion
   else {
     //definir el tipo de encriptamineto
     define("HASH", "sha256");
@@ -98,13 +95,13 @@ include("bd.php");
       //Si el contador fue no fue uno sino 0 hara el elseif
       elseif($count == 0){
           //Hacer una insercion de los valores que se dijan
-          $sql = "INSERT INTO Trabajador VALUES ('$PK', \"$Name\", \"$ApPt\", \"$ApMt\", \"$Pass\" )";
+          $sql = "INSERT INTO Trabajador VALUES ('$PK', \"$Name\", \"$ApPt\", \"$ApMt\", \"$pass_con_sal_hasheados\" )";
           //Si se logro la insercion con la conexion hara el if
           if(mysqli_query($conexion, $sql)){
             //Imprimira un mensaje de que se registro
             echo "Registro exitoso";
             //Lo mandara a la pagina de inicio
-            echo "<a href=''></a>";
+            echo "<a href='../Templates/sessioncaf.html'></a>";
           }
           else{
             //Imprimira que hay un error
@@ -112,4 +109,16 @@ include("bd.php");
           }
       }
   }
+
+  //Footer
+   echo'<footer>
+          <nav>
+            <ul>
+             <li class="footer">Copyright &copy; 2020<li>
+             <li class="footer">Todos los derechos reservados.</li>
+            <ul>
+          </nav>
+       </footer>
+   </body>
+ </html>';
 ?>

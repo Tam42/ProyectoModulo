@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <!--Ponerle estilo al div-->
-    <style>
-      div{
-        width: 400px;
-        margin: auto;
-      }
-    </style>
     <meta charset="utf-8">
     <!--El titulo que aprecera en la pestaña del navegador-->
     <title>Registro</title>
+    <link rel="stylesheet" type="text/css" href="../Statics/css/formularioreg.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sacramento">
   </head>
   <body>
+    <!--Header-->
+      <header>
+        <a id="logo-header" href="../Templates/Principal.html"><img src="../Statics/img/logo.png" class="logo">
+      </a>
+       <nav>
+        <ul>
+          <li><a href="menu4.php"><i class="fa fa-cutlery"></i></a></li>
+          <li><a href="../Templates/historia.html">Conócenos</a></li>
+          <li><a href="../Templates/Mapa.html"><i class="fa fa-map-o"></i></a></li>
+          <li><a href="../Templates/sessioncaf.html">Acceder</a></li>
+          <li><a href="../Templates/RegistroCafe.html">Crear Cuenta</a></li>
+        </ul>
+      </nav>
+     </header>
+     <br>
+     <br>
+     <br>
+     <br>
       <!--Indicar una division-->
 			<div>
           <!--Insertar un php-->
@@ -29,12 +43,24 @@
                   Te pedira tambien la fecha de nacimeinto y por medio de un select el profesor seleccionara su Colegio, y por ultimo le pedira una contraseña segura*/
                   echo"<form method='post' action='ValidacionProfesorCafe.php'>
                         <fieldset>
-                          <legend><h1>Ingresa</h1></legend>
+                          <legend><h3>Ingresa tus datos</h3></legend>
+                            <br>
+                            <br>
                             <p>RFC: <input type='text' name='RFC' placeholder='Ejemplo: RLH651213' pattern='^([A-ZÑ\x26]{4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1]))([A-Z\d]{3})?$' title='Esto no es un RFC' required></p>
+                            <br>
+                            <br>
                             <p>Nombre: <input type='text' name='NombreProf' placeholder='Ejemplo: Carlos' pattern='[a-zA-ZÁÉÍÓÚÑáéíóúñ]{3,20}' title='Este no es un nombre' required></p>
+                            <br>
+                            <br>
                             <p>Apellido Paterno: <input type='text' name='apPaternoProf' placeholder='Ejemplo: Perez' pattern='[a-zA-ZÁÉÍÓÚÑáéíóúñ]{3,20}' title='Este no es un apellido' required></p>
+                            <br>
+                            <br>
                             <p>Apellido Materno: <input type='text' name='apMaternoProf' placeholder='Ejemplo: Hernandez' pattern='[a-zA-ZÁÉÍÓÚÑáéíóúñ]{3,20}' title='Este no es un apellido' required></p>
+                            <br>
+                            <br>
                             <p>Fecha de Nacimiento: <input type='date' name='nacimiento'></p>
+                            <br>
+                            <br>
                             <p>Colegio:
                               <select name='Colegio'>
                                 <optgroup label='I'>
@@ -47,7 +73,7 @@
                                   <option>Educación_Física</option>
                                   <option>Morfología,Fisiología_y_Salud</option>
                                   <option>Orientación_Educativa</option>
-                                  <option>Psicologia_e_Higiene Mental</option>
+                                  <option>Psicologia_e_Higiene_Mental</option>
                                   <option>Química</option>
                                 </optgroup>
                                 <optgroup label='III'>
@@ -57,7 +83,7 @@
                                 </optgroup>
                                 <optgroup label='IV'>
                                   <option>Alemán</option>
-                                  <option>Artes Plásticas</option>
+                                  <option>Artes_Plásticas</option>
                                   <option>Danza</option>
                                   <option>Dibujo_y_Modelado</option>
                                   <option>Filosofía</option>
@@ -74,8 +100,12 @@
                                 </optgroup>
                               </select>
                             </p>
-                            <p>Contraseña:<input type='password' name='passProf1' placeholder='Minimo 10 caracteres' pattern='[A-Za-z0-9@#$%?¡!&/+-]{10,25}' title='Una contraseña segura tiene uns longitud entre 10 y 25 caracteres, tiene almenos una letra mayúscula o minúscula, un dígito, o los símbolos @ # $ % ? ¡ ! & / + - ' required></p>
-                            <input type='submit' value='Registrarse'>";
+                            <br>
+                            <br>
+                            <p>Contraseña:<input type='password' name='passProf1' placeholder='Minimo 10 caracteres' pattern='[A-Za-z0-9@#$%?¡!&/=+*-]{10,25}' title='Una contraseña segura tiene uns longitud entre 10 y 25 caracteres, tiene almenos una letra mayúscula o minúscula, un dígito, o los símbolos @ # $ % ? ¡ ! & / = + * - ' required></p>
+                            <br>
+                            <br>
+                            <input class='send' type='submit' value='Registrarse'>";
                 }
                 //Si el primer if no se hizo pasara al segundo en el cual revisara si $B es igual que $U, si es igual entrara
                 if ($B==$U){
@@ -83,11 +113,21 @@
                   te pedira por medio de un select el alumno escogera su grupo, y por ultimo le pedira una contraseña segura*/
                   echo"<form method='post' action='ValidacionAlumnoCafe.php'>
                         <fieldset>
-                          <legend><h1>Ingresa</h1></legend>
+                          <legend><h3>Ingresa tus datos</h3></legend>
+                            <br>
+                            <br>
                             <p>Numero de Cuenta: <input type='text' name='NumCuenta' placeholder='Ejemplo: 319141887' pattern='[319, 318, 320, 116, 115, 117]{3}\d{6}' title='Tiene que contener exactamente 9 digitos y con los numeros iniciales validos' required></p>
+                            <br>
+                            <br>
                             <p>Nombre: <input type='text' name='NombreAl' placeholder='Ejemplo: Carlos' pattern='[a-zA-ZÁÉÍÓÚÑáéíóúñ]{3,20}' title='Este no es un nombre' required></p>
+                            <br>
+                            <br>
                             <p>Apellido Paterno: <input type='text' name='apPaternoAl' placeholder='Ejemplo: Perez' pattern='[a-zA-ZÁÉÍÓÚÑáéíóúñ]{3,20}' title='Este no es un apellido' required></p>
+                            <br>
+                            <br>
                             <p>Apellido Materno: <input type='text' name='apPMaternoAl' placeholder='Ejemplo: Hernandez' pattern='[a-zA-ZÁÉÍÓÚÑáéíóúñ]{3,20}' title='Este no es un apellido' required></p>
+                            <br>
+                            <br>
                             <p>Grupo:
                               <select name='Grupo'>
                                 <optgroup label='Cuarto'>
@@ -119,8 +159,12 @@
                                 </optgroup>
                               </select>
                             </p>
-                            <p>Contraseña:<input type='password' name='passAl1' placeholder='Minimo 10 caracteres' pattern='[A-Za-z0-9@#$%?¡!&/+-]{10,25}' title='Una contraseña segura tiene uns longitud entre 10 y 25 caracteres, tiene almenos una letra mayúscula o minúscula, un dígito, o los símbolos @ # $ % ? ¡ ! & / + - ' required></p>
-                            <input type='submit' value='Registrarse'>";
+                            <br>
+                            <br>
+                            <p>Contraseña:<input type='password' name='passAl1' placeholder='Minimo 10 caracteres' pattern='[A-Za-z0-9@#$%]{10,25}' title='Una contraseña segura tiene uns longitud entre 10 y 25 caracteres, tiene almenos una letra mayúscula o minúscula, un dígito, o los símbolos '@', '#', '$' y '%'' required></p>
+                            <br>
+                            <br>
+                            <input class='send' type='submit' value='Registrarse'>";
                 }
                 //Si no entro a la segunda condicion revisara si $C es igual a $U, si es igual entrara
                 if ($C==$U){
@@ -128,17 +172,38 @@
                   y por ultimo le pedira una contraseña segura*/
                   echo"<form method='post' action='ValidacionTrabajadorCafe.php'>
                         <fieldset>
-                          <legend><h1>Ingresa</h1></legend>
+                          <legend><h3>Ingresa tus datos</h3></legend>
+                            <br>
+                            <br>
                             <p>Numero de Trabajador: <input type='text' name='NumTrab' placeholder='Ejemplo: 562310'pattern='\d{6}' title='Tiene que contener exactamente 6 digitos' required></p>
+                            <br>
+                            <br>
                             <p>Nombre: <input type='text' name='NombreTrab' placeholder='Ejemplo: Carlos' pattern='[a-zA-ZÁÉÍÓÚÑáéíóúñ]{3,20}' title='Este no es un nombre' required></p>
+                            <br>
+                            <br>
                             <p>Apellido Paterno: <input type='text' name='apPaternoTrab' placeholder='Ejemplo: Perez' pattern='[a-zA-ZÁÉÍÓÚÑáéíóúñ]{3,20}' title='Este no es un apellido' required></p>
+                            <br>
+                            <br>
                             <p>Apellido Materno: <input type='text' name='apMaternoTrab' placeholder='Ejemplo: Hernandez' pattern='[a-zA-ZÁÉÍÓÚÑáéíóúñ]{3,20}' title='Este no es un apellido' required></p>
-                            <p>Contraseña:<input type='password' name='passTrab1' placeholder='Minimo 10 caracteres' pattern='[A-Za-z0-9@#$%?¡!&/+-]{10,25}' title='Una contraseña segura tiene uns longitud entre 10 y 25 caracteres, tiene almenos una letra mayúscula o minúscula, un dígito, o los símbolos @ # $ % ? ¡ ! & / + - ' required></p>
-                            <input type='submit' value='Registrarse'>";
+                            <br>
+                            <br>
+                            <p>Contraseña:<input type='password' name='passTrab1' placeholder='Minimo 10 caracteres' pattern='[A-Za-z0-9@#$%]{8,20}' title='Una contraseña segura tiene uns longitud entre 10 y 25 caracteres, tiene almenos una letra mayúscula o minúscula, un dígito, o los símbolos '@', '#', '$' y '%'' required></p>
+                            <br>
+                            <br>
+                            <input class='send' type='submit' value='Registrarse'>";
                 }
           ?>
           </fieldset>
         </form>
       </div>
+    <!--Footer-->
+    <footer>
+        <nav>
+           <ul>
+              <li class="footer">Copyright &copy; 2020<li>
+              <li class="footer">Todos los derechos reservados.</li>
+           <ul>
+        </nav>
+    </footer>
   </body>
 </html>
