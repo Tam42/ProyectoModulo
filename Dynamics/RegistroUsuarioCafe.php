@@ -125,7 +125,7 @@
                             <p>Apellido Paterno: <input type='text' name='apPaternoAl' placeholder='Ejemplo: Perez' pattern='[a-zA-ZÁÉÍÓÚÑáéíóúñ]{3,20}' title='Este no es un apellido' required></p>
                             <br>
                             <br>
-                            <p>Apellido Materno: <input type='text' name='apPMaternoAl' placeholder='Ejemplo: Hernandez' pattern='[a-zA-ZÁÉÍÓÚÑáéíóúñ]{3,20}' title='Este no es un apellido' required></p>
+                            <p>Apellido Materno: <input type='text' name='apMaternoAl' placeholder='Ejemplo: Hernandez' pattern='[a-zA-ZÁÉÍÓÚÑáéíóúñ]{3,20}' title='Este no es un apellido' required></p>
                             <br>
                             <br>
                             <p>Grupo:
@@ -170,7 +170,7 @@
                 if ($C==$U){
                   /*Imprimira un formulario que sera enviado por metodo post a ValidacionTrabajadorCafe.php y que el contenido del formulario sera un fieldset que lo contendra y la leyenda Ingresa, te pedira el Numero de Trabajador, Nombre, Apellido Paterno y Materno,
                   y por ultimo le pedira una contraseña segura*/
-                  echo"<form method='post' action='ValidacionTrabajadorCafe.php'>
+                  echo"<form method='post' action='ValidacionTrabajador.php'>
                         <fieldset>
                           <legend><h3>Ingresa tus datos</h3></legend>
                             <br>

@@ -2,32 +2,9 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <!--El titulo que aprecera en la pestaña del navegador-->
     <title>Cafeteria</title>
-    <link rel="stylesheet" type="text/css" href="../Statics/css/formularioreg.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sacramento">
   </head>
   <body>
-  </head>
-  <body>
-    <!--Header-->
-      <header>
-        <a id="logo-header" href="../Templates/Principal.html"><img src="../Statics/img/logo.png" class="logo">
-      </a>
-       <nav>
-        <ul>
-          <li><a href="menu3.php"><i class="fa fa-cutlery"></i></a></li>
-          <li><a href="../Templates/Mapa.html"><i class="fa fa-map-o"></i></a></li>
-          <li><a href="../Templates/privacidad.html">Privacidad</a></li>
-			    <li><a href="logout.php">Cerrar sesión</a></li>
-        </ul>
-      </nav>
-     </header>
-     <br>
-     <br>
-     <br>
-     <br>
     <?php
       include("bd.php");
       //Conexion más base y despliegue de errores
@@ -72,21 +49,40 @@
             }
             if(isset($_COOKIE["bloquear"]))
             {
-              echo "<h3>EL usuario ha sido bloqueado</h3>";
+              echo "EL usuario ha sido bloqueado";
             }
           }
           $categoria = $_SESSION['categoria'];
           $eleccion = $_SESSION['tipo'];
-          $nombre= $_POST['usuario'];
-          $cons2="SELECT password FROM $categoria WHERE Nombre='$nombre'"; //consulta para la contraseña
+          $User= $_SESSION['usuario'];
+          if ($categoria == "alumno")
+          {
+            $dato="numero_de_cuenta";
+          }
+          if ($categoria == "profesor_o_funcionario")
+          {
+            $dato="rfc";
+          }
+          if ($categoria == "trabajador")
+          {
+            $dato="numero_de_trabajador";
+          }
+          $cons2="SELECT password FROM $categoria WHERE $dato='$User'"; //consulta para la contraseña
           $result2 = $conexion -> query($cons2);
           while($fila= mysqli_fetch_array ($result2)){
             $fin= $fila[0];
           }
-          $Pass=substr("$fin", 3);
+          if(!isset($fin))
+          {
+            echo "Esta categoria no es adecuada <br>";
+          }
+          else
+          {
+            $Pass=substr("$fin", 3);
+          }
           if ($eleccion == "Cliente")
           {
-            $cons="SELECT * FROM $categoria WHERE Nombre='$nombre'"; //primera consulta para el usuario
+            $cons="SELECT * FROM $categoria WHERE $dato='$User'"; //primera consulta para el usuario
             $result = $conexion -> query($cons);
             $count= mysqli_num_rows($result);
             if($count==1)
@@ -94,21 +90,21 @@
               if (password_verify($_POST['contraseña'], $Pass)) //se verifica la contraseña
               {
                 session_start();
-                Header('Location: principal.php');
+                Header('Location: menu3.php');
               }
               else
               {
-                echo "<h3>No es la contraseña</h3><br>";
+                echo "No es la contraseña<br>";
               }
             }
             else
             {
-              echo "<h3>Usuario no valido</h3>";
+              echo "Usuario no valido";
             }
           }
           if ($eleccion == "Supervisor de pedidos")
           {
-            $cons="SELECT * FROM $categoria WHERE Nombre='$nombre'";
+            $cons="SELECT * FROM supervisor WHERE usuario_supervisor='$User'";
             $result = $conexion -> query($cons);
             $count= mysqli_num_rows($result);
             if($count==1)
@@ -120,17 +116,17 @@
               }
               else
               {
-                echo "<h3>No es la contraseña</h3><br>";
+                echo "No es la contraseña<br>";
               }
             }
             else
             {
-              echo "<h3>Usuario no valido</h3>";
+              echo "Usuario no valido";
             }
           }
           if ($eleccion == "Administrador de sistemas")
           {
-            $cons="SELECT * FROM $categoria WHERE Nombre='$nombre'";
+            $cons="SELECT * FROM administrador WHERE usuario_administrador='$User'";
             $result = $conexion -> query($cons);
             $count= mysqli_num_rows($result);
             if($count==1)
@@ -142,25 +138,16 @@
               }
               else
               {
-                echo "<h3>No es la contraseña</h3><br>";
+                echo "No es la contraseña<br>";
               }
             }
             else
             {
-              echo "<h3>Usuario no valido</h3>";
+              echo "Usuario no valido";
             }
           }
         }
       }
     ?>
-    <!--Footer-->
-    <footer>
-        <nav>
-           <ul>
-              <li class="footer">Copyright &copy; 2020<li>
-              <li class="footer">Todos los derechos reservados.</li>
-           <ul>
-        </nav>
-    </footer>
   </body>
   </html>

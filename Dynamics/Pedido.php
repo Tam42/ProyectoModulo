@@ -5,7 +5,7 @@ echo '<!DOCTYPE html>
   <head>
     <meta charset="utf-8">
     <title>Agregar</title>
-    <link rel="stylesheet" type="text/css" href="../Statics/css/formularioreg.css">
+    <link rel="stylesheet" type="text/css" href="../Statics/css/agregar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sacramento">
   </head>
@@ -44,22 +44,22 @@ echo '<!DOCTYPE html>
         $disponibilidad=$row[1];
         $precio=$row[2];
 
-        echo "<h2>Tu pedido</h2>";
+        echo "<h2>Tu pedido</h2><br><br><br>";
         $newname=str_replace("_"," ",$nombre); //Se crea un formulario para que el usuario confirme su pedido y seleccione la ubicación
-        echo "$newname <br> $$precio<br>
+        echo "$newname <br><br> $$precio<br><br>
         <form action='Pedido2,1.php' method='post'>
-        ¿Cuántos quieres?<br>
-        <input type='number' name='cantidad' max='$disponibilidad' min='1' required><br>";
+        ¿Cuántos quieres?<br><br>
+        <input type='number' name='cantidad' max='$disponibilidad' min='1' required><br><br>";
         echo "<select name='Lugar' required>";
         while($row1 = mysqli_fetch_array($respuesta2))
           echo "<option value='$row1[0]'>$row1[1]</option></ul>";
         echo "</select><br>
-        <input type='hidden' name='precio' value='$precio'>";
+        <input type='hidden' name='precio' value='$precio'><br><br>";
         echo "<input type='hidden' name='alimento' value='$newname'>
-        <input type='hidden' name='id_alimento' value='$pedido'>";
-        echo "<input type='submit' value='Confirmar pedido'>
+        <input type='hidden' name='id_alimento' value='$pedido'><br><br>";
+        echo "<input type='submit' value='Confirmar pedido'><br><br><br>
         </form>";
-        echo "<img class='foto' src=../statics/img/menu/".$nombre.".jpg>";
+        echo "<img class='foto' src=../statics/img/menu/".$nombre.".jpg><br><br>";
         mysqli_close($conexion);
     }
     else {//Si el formulario no envio un valor se le regresa al menu

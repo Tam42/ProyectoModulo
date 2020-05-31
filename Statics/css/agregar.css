@@ -66,6 +66,9 @@ header nav ul li:hover {
   margin-left: auto;
   margin-right: auto;
 }
+.foto{
+  width: 300px;
+}
 
 h3{
   font-family: "Sacramento";
@@ -89,6 +92,7 @@ textarea{
 .fotito{
   width: 100px
 }
+
 
 /*Footer*/
 

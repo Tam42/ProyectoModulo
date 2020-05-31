@@ -68,9 +68,9 @@ include("bd.php");
       return $ciffWIv;
     }
     //Con la funcion cifrar ciframos el usuarios
-    $ciff= Cifrar($_POST['RFC']);
+    $ciff= Cifrar($_POST['NombreProf']);
     //Definir con variabkes los datos que se reciben del formulario
-    $Name= $_POST['NombreProf'];
+    $Name= $_POST['RFC'];
     $ApPt= $_POST['apPaternoProf'];
     $ApMt= $_POST['apMaternoProf'];
     $Col= $_POST['Colegio'];
@@ -82,7 +82,7 @@ include("bd.php");
     //Concatenar $sal y $pass
     $pass_con_sal_hasheados = $sal.$pass;
     //La consulta que se realizara para ver si el usuario existe
-    $cons = "SELECT * FROM profesor_o_funcionario WHERE Nombre='$Name' and ApellidoPat='$ApPt' and ApellidoMat='$ApMt'";
+    $cons = "SELECT * FROM profesor_o_funcionario WHERE RFC='$Name' ";
     //Ver si se pudo hacer la consulta con la conexion
     $result = $conexion -> query($cons);
       //Ver si existe un registro en la Base de Datos
@@ -97,7 +97,7 @@ include("bd.php");
       //Si el contador fue no fue uno sino 0 hara el elseif
       elseif($count == 0){
           //Hacer una insercion de los valores que se dijan
-          $sql = "INSERT INTO profesor_o_funcionario VALUES ('$ciff', \"$Name\", \"$ApPt\", \"$ApMt\", \"$Col\", \"$pass_con_sal_hasheados\" )";
+          $sql = "INSERT INTO profesor_o_funcionario VALUES (\"$Name\", 'ciff', \"$ApPt\", \"$ApMt\", \"$Col\", \"$pass_con_sal_hasheados\" )";
           //Si se logro la insercion con la conexion hara el if
           if(mysqli_query($conexion, $sql)){
             //Imprimira un mensaje de que se registro

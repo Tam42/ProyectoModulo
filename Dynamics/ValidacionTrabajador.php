@@ -68,9 +68,9 @@ include("bd.php");
       return $ciffWIv;
     }
     //Con la funcion cifrar ciframos el usuarios
-    $ciff= Cifrar($_POST['NumTrab'];);
+    $ciff= Cifrar($_POST['NombreTrab']);
     //Definir con variabkes los datos que se reciben del formulario
-    $Name= $_POST['NombreTrab'];
+    $Name= $_POST['NumTrab'];
     $ApPt= $_POST['apPaternoTrab'];
     $ApMt= $_POST['apMaternoTrab'];
     //Hashear la contraseña enviada del formulario
@@ -80,7 +80,7 @@ include("bd.php");
     //Concatenar $sal y $pass
     $pass_con_sal_hasheados = $sal.$pass;
     //La consulta que se realizara para ver si el usuario existe
-    $cons = "SELECT * FROM Trabajador WHERE Nombre='$Name' and ApellidoPat='$ApPt' and ApellidoMat='$ApMt'";
+    $cons = "SELECT * FROM Trabajador WHERE numero_de_trabajador='$Name'";
     //Ver si se pudo hacer la consulta con la conexion
     $result = $conexion -> query($cons);
       //Ver si existe un registro en la Base de Datos
@@ -88,24 +88,24 @@ include("bd.php");
       //Si existe un registro hara el if
       if($count == 1){
           //Imprimira que el usuario ya existe
-          echo "Registro existente<br>";
+          echo "<h3>Registro existente</h3><br>";
           //Imprimira un link que te direccionara de nuevo al formulario de registro
           echo"<a href='../Templates/RegistroCafe.html'>Volver al formulario</a>";
       }
       //Si el contador fue no fue uno sino 0 hara el elseif
       elseif($count == 0){
           //Hacer una insercion de los valores que se dijan
-          $sql = "INSERT INTO Trabajador VALUES ('$PK', \"$Name\", \"$ApPt\", \"$ApMt\", \"$pass_con_sal_hasheados\" )";
+          $sql = "INSERT INTO Trabajador VALUES (\"$Name\", '$ciff', \"$ApPt\", \"$ApMt\", \"$pass_con_sal_hasheados\" )";
           //Si se logro la insercion con la conexion hara el if
           if(mysqli_query($conexion, $sql)){
             //Imprimira un mensaje de que se registro
-            echo "Registro exitoso";
+            echo "<h3>Registro exitoso</h3>";
             //Lo mandara a la pagina de inicio
             echo "<a href='../Templates/sessioncaf.html'></a>";
           }
           else{
             //Imprimira que hay un error
-            echo "Hubo un problema inentelo mas tarde :(";
+            echo "<h3>Hubo un problema itentelo mas tarde :(</h3>";
           }
       }
   }

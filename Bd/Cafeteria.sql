@@ -89,7 +89,7 @@ CREATE TABLE `alimento` (
 
 LOCK TABLES `alimento` WRITE;
 /*!40000 ALTER TABLE `alimento` DISABLE KEYS */;
-INSERT INTO `alimento` VALUES (1,'Chilaquiles','Delicisosos chilaquiles con salsa roja',25,10),(2,'Molletes','Deliciosos y con pico de gallo',20,15),(3,'Sandwich de atun','Rico sandwich de atun fresco',15,8),(4,'Torta','Con jamon y queso',15,18),(5,'Cereal con leche','Perfecto si no desayunaste',15,18),(6,'Pasta','Pasta con Atun',25,15),(7,'Yogur','De muchos sabores',10,50),(8,'Cuernito a la Besne','¿Porqie a la Besne? Porque solo lo bueno se llama asi',15,25),(9,'Licuado de Fresa','Deliciosos licuado hecho con leche de vaca',15,20),(10,'Ensalada','Ensalada con pollo y aderezo',25,15),(11,'Coyo caldos','Para los dias romanticos aprovecha 2 maruchan',35,15),(12,'Combo lactobacilo','Aprovecha este combo de un paquete de 5 yakults',35,10),(13,'Fruta','Melon, papaya y sandia',20,15),(14,'Agua de vaso','Aprovecha de la clasica agua de vaso de la prepa 6',15,100),(15,'Capuchino','Bebida nacida en Italia, preparada con café expres',20,18),(16,'Jugo de Naranja','Rico juguito de naranja, no olvides tu vitamina C',20,25),(17,'Combo Caso','Para los días sin dormir Antonio Caso te cuida',50,30),(18,'Te','Muy relajante',15,50),(19,'Combo Juan','Conviertete en un Jedi con este elote, solo tenemos chile que no',12,30),(20,'Baguel','Relleno de queso y jamon',15,20);
+INSERT INTO `alimento` VALUES (1,'Chilaquiles','Delicisosos chilaquiles con salsa roja',25,10),(2,'Molletes','Deliciosos y con pico de gallo',20,15),(3,'Sandwich de atun','Rico sandwich de atun fresco',15,8),(4,'Torta','Con jamon y queso',15,18),(5,'Cereal_con_leche','Perfecto si no desayunaste',15,18),(6,'Pasta','Pasta con Atun',25,15),(7,'Yogur','De muchos sabores',10,50),(8,'Cuernito_a_la_Besne','¿Porqie a la Besne? Porque solo lo bueno se llama asi',15,25),(9,'Licuado_de_Fresa','Deliciosos licuado hecho con leche de vaca',15,20),(10,'Ensalada','Ensalada con pollo y aderezo',25,15),(11,'Coyo_caldos','Para los dias romanticos aprovecha 2 maruchan',35,15),(12,'Combo_lactobacilo','Aprovecha este combo de un paquete de 5 yakults',35,10),(13,'Fruta','Melon, papaya y sandia',20,15),(14,'Agua_de_vaso','Aprovecha de la clasica agua de vaso de la prepa 6',15,100),(15,'Capuchino','Bebida nacida en Italia, preparada con café expres',20,18),(16,'Jugo_de_Naranja','Rico juguito de naranja, no olvides tu vitamina C',20,25),(17,'Combo_Caso','Para los días sin dormir Antonio Caso te cuida',50,30),(18,'Te','Muy relajante',15,50),(19,'Combo_Juan','Conviertete en un Jedi con este elote, solo tenemos chile que no',12,30),(20,'Baguel','Relleno de queso y jamon',15,20);
 /*!40000 ALTER TABLE `alimento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -102,7 +102,7 @@ DROP TABLE IF EXISTS `alumno`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `alumno` (
   `numero_de_cuenta` varchar(70) NOT NULL,
-  `Nombre` varchar(20) DEFAULT NULL,
+  `Nombre` varchar(70) DEFAULT NULL,
   `ApellidoPat` varchar(20) DEFAULT NULL,
   `ApellidoMat` varchar(20) DEFAULT NULL,
   `Numero_grupo` int(3) DEFAULT NULL,
@@ -224,7 +224,7 @@ CREATE TABLE `pedido` (
   CONSTRAINT `id_lugar` FOREIGN KEY (`id_lugar`) REFERENCES `direccion_de_entrega` (`id_lugar`),
   CONSTRAINT `numero_de_cuenta` FOREIGN KEY (`numero_de_cuenta`) REFERENCES `alumno` (`numero_de_cuenta`),
   CONSTRAINT `numero_de_trabajador` FOREIGN KEY (`numero_de_trabajador`) REFERENCES `trabajador` (`numero_de_trabajador`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -245,7 +245,7 @@ DROP TABLE IF EXISTS `profesor_o_funcionario`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `profesor_o_funcionario` (
   `RFC` varchar(70) NOT NULL,
-  `Nombre` varchar(20) DEFAULT NULL,
+  `Nombre` varchar(70) DEFAULT NULL,
   `ApellidoPat` varchar(20) DEFAULT NULL,
   `ApellidoMat` varchar(20) DEFAULT NULL,
   `Nombre_colegio` varchar(35) DEFAULT NULL,
@@ -310,7 +310,7 @@ CREATE TABLE `supervisor` (
 
 LOCK TABLES `supervisor` WRITE;
 /*!40000 ALTER TABLE `supervisor` DISABLE KEYS */;
-INSERT INTO `supervisor` VALUES ('CXM995A41gDQfkIXAcqqApTajbRFCHNcNS9Y0yvICuM=','547$2y$10$xU8ZySLH7LRVo4YJ4.UXcO/uSYo8xx80UTxYzOi0xj84e5C8zl7m6',NULL),('xv1+DasZyVpfSXaUm1CkH3RjuiAjEOyDM/xv9WFvshM=','156$2y$10$YmZM2zUyhIRIN9rKKZBL7O4FUKIel6vy6dpIbmah/asGWkLZTwSB2',NULL);
+INSERT INTO `supervisor` VALUES ('232426','156$2y$10$YmZM2zUyhIRIN9rKKZBL7O4FUKIel6vy6dpIbmah/asGWkLZTwSB2',NULL);
 /*!40000 ALTER TABLE `supervisor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -323,7 +323,7 @@ DROP TABLE IF EXISTS `trabajador`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `trabajador` (
   `numero_de_trabajador` varchar(70) NOT NULL,
-  `Nombre` varchar(20) DEFAULT NULL,
+  `Nombre` varchar(70) DEFAULT NULL,
   `ApellidoPat` varchar(20) DEFAULT NULL,
   `ApellidoMat` varchar(20) DEFAULT NULL,
   `Password` varchar(70) DEFAULT NULL,
@@ -349,4 +349,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-30 21:05:31
+-- Dump completed on 2020-05-31  1:50:48

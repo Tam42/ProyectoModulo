@@ -5,7 +5,7 @@ echo '<!DOCTYPE html>
   <head>
     <meta charset="utf-8">
     <title>Agregar</title>
-    <link rel="stylesheet" type="text/css" href="../Statics/css/agregar.css">
+    <link rel="stylesheet" type="text/css" href="../Statics/css/formularioreg.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sacramento">
   </head>
@@ -51,6 +51,7 @@ echo '<!DOCTYPE html>
   $tipo="estudiante";//variables provisonales antes de poner las sesiones
   $usuario=319294404;
   $id_lugar=1;
+
   //Consultar estudiante
   if ($tipo="estudiante") {
     $consulta = "SELECT nombre FROM estudiante WHERE numero_de_cuenta=$usuario";
@@ -75,7 +76,13 @@ echo '<!DOCTYPE html>
     echo "<br>Hola! $nombre tu pedido es el siguiente:<br> $alimento<br>
     Precio individual: $precio<br> Pediste:$disponibilidad<br> Total:$$total<br> Lo recogeras en: $NLugar";
   }
+
+
+   echo "<form method='Post' action='status1.php'>
+  <input type='submit' name='progreso' value='Confirmar pedido'>
+   </form>";
   echo '<footer>
+
       <nav>
          <ul>
             <li class="footer">Copyright &copy; 2020<li>

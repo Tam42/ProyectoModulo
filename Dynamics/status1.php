@@ -1,6 +1,6 @@
 <?php
 //Cabecera
-$value = 'En proceso';
+$value = $_POST['progreso'];
 
 //Crea cookie
 setcookie("TestCookie", $value);
