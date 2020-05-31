@@ -1,0 +1,213 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  overflow-x: hidden;
+}
+/*Header*/
+
+#logo-header {
+	float: left;
+	padding: 3px 0 0 20px;
+	text-decoration: none;
+}
+	#logo-header:hover {
+		color: #0b76a6;
+	}
+
+  .logo{
+    width: 70px;
+    height: 60px;
+    float: right;
+  }
+
+header {
+  background-color: #000000;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+header nav {
+  float: right;
+}
+
+header nav ul {
+  list-style: none;
+  overflow: hidden;
+}
+
+header nav ul li {
+  float: left;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+header nav ul li a {
+  display: block;
+  padding: 25px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+header nav ul li:hover {
+  background-color: #243140;
+}
+/*Section*/
+.imgpri{
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 0px;
+    padding: 0px;
+    text align: center;
+}
+
+div img{
+  width: 100%;
+  height:700px;
+}
+
+.grid1{
+  display: grid;
+  grid-template-columns: 330px 330px 330px 330px;
+  grid-gap: 20px;
+  padding: 60px;
+  text-align: left;
+}
+.grid1 img{
+  width: 320px;
+  height:370px;
+}
+
+.g1{
+   font-family: "Sacramento";
+  font-size: 50px;
+  color: #D59F0F ;
+  padding: 0px;
+  line-height: 55px;
+}
+
+.g2{
+   font-family: "Alfa Slab One";
+  font-size: 20px;
+  color: #1C2536;
+  padding: 0px;
+  line-height: 22px;
+}
+
+.g3{
+   font-family: "Baloo 2";
+  font-size: 17px;
+  color: #000000;
+  padding: 10px;
+  line-height: 22px;
+}
+
+a{
+  color: #1C2536;
+}
+
+.grid2{
+  display: grid;
+  grid-template-columns: 330px 330px 330px 300px;
+  grid-gap: 10px;
+  padding: 0px;
+  text-align: center;
+}
+
+.grid2 img{
+  width: 325px;
+  height:330px;
+}
+
+.grid3{
+  display: grid;
+  grid-template-columns: 330px 330px 330px 330px;
+  grid-gap: 20px;
+  padding: 60px;
+  text-align: right;
+  float: right;
+}
+
+.grid3 img{
+  width: 320px;
+  height:370px;
+}
+
+.mg1{
+   font-family: "Sacramento";
+  font-size: 50px;
+  color: #D59F0F ;
+  padding: 0px;
+  line-height: 55px;
+  text-align: right;
+}
+
+.mg2{
+   font-family: "Alfa Slab One";
+  font-size: 20px;
+  color: #1C2536;
+  padding: 0px;
+  line-height: 22px;
+  text-align: right;
+}
+
+.mg3{
+   font-family: "Baloo 2";
+  font-size: 17px;
+  color: #000000;
+  padding: 10px;
+  line-height: 22px;
+  text-align: right;
+}
+
+.contenido {
+  padding-top: 80px;
+}
+.wrapper {
+  width: 80%;
+  margin: auto;
+  overflow:hidden;
+}
+p {
+  margin-bottom: 20px;
+  text-align: left;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+/*Footer*/
+footer{
+  background-color: #000000;
+  width: 100%;
+}
+footer nav {
+  float: center;
+  width: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+footer nav ul {
+  list-style: none;
+  overflow: hidden;
+}
+
+footer nav ul li {
+  float: center;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  padding: 3px;
+}
+.footer{
+  margin-bottom: 10px;
+  text-align:center;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+}
