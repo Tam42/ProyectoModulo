@@ -34,7 +34,6 @@ CREATE TABLE `administrador` (
   `id_pedido` int(10) DEFAULT NULL,
   `nombre_colegio` varchar(35) DEFAULT NULL,
   `usuario_supervisor` varchar(70) DEFAULT NULL,
-  `fk_lugar` int(6) DEFAULT NULL,
   PRIMARY KEY (`usuario_administrador`),
   KEY `fk_lugar` (`id_lugar`),
   KEY `fk_alimento` (`id_alimento`),
@@ -63,6 +62,7 @@ CREATE TABLE `administrador` (
 
 LOCK TABLES `administrador` WRITE;
 /*!40000 ALTER TABLE `administrador` DISABLE KEYS */;
+INSERT INTO `administrador` VALUES ('sRiVX8I4YUX+uDnQ2ysle7S0DaL+ul4g4vwIlKpMpHE=','343$2y$10$.OMLRlJ9leXtpuuHdWxLdeHoN//XeaDG89H3nbkePSvHYkFWMCJHO',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `administrador` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -76,7 +76,7 @@ DROP TABLE IF EXISTS `alimento`;
 CREATE TABLE `alimento` (
   `id_alimento` int(6) NOT NULL,
   `Nombre_alimento` varchar(30) DEFAULT NULL,
-  `Descripcion` varchar(50) DEFAULT NULL,
+  `Descripcion` varchar(100) DEFAULT NULL,
   `Precio` int(4) DEFAULT NULL,
   `Disponibilidad` int(3) DEFAULT NULL,
   PRIMARY KEY (`id_alimento`)
@@ -89,6 +89,7 @@ CREATE TABLE `alimento` (
 
 LOCK TABLES `alimento` WRITE;
 /*!40000 ALTER TABLE `alimento` DISABLE KEYS */;
+INSERT INTO `alimento` VALUES (1,'Chilaquiles','Delicisosos chilaquiles con salsa roja',25,10),(2,'Molletes','Deliciosos y con pico de gallo',20,15),(3,'Sandwich de atun','Rico sandwich de atun fresco',15,8),(4,'Torta','Con jamon y queso',15,18),(5,'Cereal con leche','Perfecto si no desayunaste',15,18),(6,'Pasta','Pasta con Atun',25,15),(7,'Yogur','De muchos sabores',10,50),(8,'Cuernito a la Besne','¿Porqie a la Besne? Porque solo lo bueno se llama asi',15,25),(9,'Licuado de Fresa','Deliciosos licuado hecho con leche de vaca',15,20),(10,'Ensalada','Ensalada con pollo y aderezo',25,15),(11,'Coyo caldos','Para los dias romanticos aprovecha 2 maruchan',35,15),(12,'Combo lactobacilo','Aprovecha este combo de un paquete de 5 yakults',35,10),(13,'Fruta','Melon, papaya y sandia',20,15),(14,'Agua de vaso','Aprovecha de la clasica agua de vaso de la prepa 6',15,100),(15,'Capuchino','Bebida nacida en Italia, preparada con café expres',20,18),(16,'Jugo de Naranja','Rico juguito de naranja, no olvides tu vitamina C',20,25),(17,'Combo Caso','Para los días sin dormir Antonio Caso te cuida',50,30),(18,'Te','Muy relajante',15,50),(19,'Combo Juan','Conviertete en un Jedi con este elote, solo tenemos chile que no',12,30),(20,'Baguel','Relleno de queso y jamon',15,20);
 /*!40000 ALTER TABLE `alimento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -140,6 +141,7 @@ CREATE TABLE `colegio` (
 
 LOCK TABLES `colegio` WRITE;
 /*!40000 ALTER TABLE `colegio` DISABLE KEYS */;
+INSERT INTO `colegio` VALUES ('Alemán'),('Artes_Plásticas'),('Biología'),('Ciencias_sociales'),('Danza'),('Dibujo_Y_Modelado'),('Educación_Física'),('ETE'),('Filosofía'),('Fisica'),('Francés'),('Geografía'),('Historia'),('Informática'),('Inglés'),('Italiano'),('Letras_Clásicas'),('Literatura'),('Matemáticas'),('Morfología,Físiología_y_Salud'),('Música'),('Orientación_Educativa'),('Psicologia_e_Higiene_Mental'),('Química'),('Teatro');
 /*!40000 ALTER TABLE `colegio` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -163,6 +165,7 @@ CREATE TABLE `direccion_de_entrega` (
 
 LOCK TABLES `direccion_de_entrega` WRITE;
 /*!40000 ALTER TABLE `direccion_de_entrega` DISABLE KEYS */;
+INSERT INTO `direccion_de_entrega` VALUES (1,'Cafeteria'),(2,'Patio de sexto'),(3,'Patio de quinto'),(4,'Patio de cuarto'),(5,'Direccion'),(6,'Sala de maestros'),(7,'Salones de dibujo'),(8,'Pulpo'),(9,'Frente al auditorio'),(10,'Pasillo de vestidores'),(11,'Entrada de Canchas');
 /*!40000 ALTER TABLE `direccion_de_entrega` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -186,6 +189,7 @@ CREATE TABLE `grupo` (
 
 LOCK TABLES `grupo` WRITE;
 /*!40000 ALTER TABLE `grupo` DISABLE KEYS */;
+INSERT INTO `grupo` VALUES (401,'Cuarto'),(402,'Cuarto'),(403,'Cuarto'),(404,'Cuarto'),(405,'Cuarto'),(406,'Cuarto'),(407,'Cuarto'),(408,'Cuarto'),(409,'Cuarto'),(410,'Cuarto'),(411,'Cuarto'),(412,'Cuarto'),(413,'Cuarto'),(414,'Cuarto'),(415,'Cuarto'),(416,'Cuarto'),(417,'Cuarto'),(451,'Cuarto'),(452,'Cuarto'),(453,'Cuarto'),(454,'Cuarto'),(455,'Cuarto'),(456,'Cuarto'),(457,'Cuarto'),(458,'Cuarto'),(459,'Cuarto'),(460,'Cuarto'),(461,'Cuarto'),(462,'Cuarto'),(463,'Cuarto'),(464,'Cuarto'),(465,'Cuarto'),(501,'Quinto'),(502,'Quinto'),(503,'Quinto'),(504,'Quinto'),(505,'Quinto'),(506,'Quinto'),(507,'Quinto'),(508,'Quinto'),(509,'Quinto'),(510,'Quinto'),(511,'Quinto'),(512,'Quinto'),(513,'Quinto'),(514,'Quinto'),(515,'Quinto'),(516,'Quinto'),(517,'Quinto'),(518,'Quinto'),(551,'Quinto'),(552,'Quinto'),(553,'Quinto'),(554,'Quinto'),(555,'Quinto'),(556,'Quinto'),(557,'Quinto'),(558,'Quinto'),(559,'Quinto'),(560,'Quinto'),(561,'Quinto'),(562,'Quinto'),(563,'Quinto'),(564,'Quinto'),(601,'Sexto'),(602,'Sexto'),(603,'Sexto'),(604,'Sexto'),(605,'Sexto'),(606,'Sexto'),(607,'Sexto'),(608,'Sexto'),(609,'Sexto'),(610,'Sexto'),(611,'Sexto'),(612,'Sexto'),(613,'Sexto'),(614,'Sexto'),(615,'Sexto'),(616,'Sexto'),(617,'Sexto'),(618,'Sexto'),(619,'Sexto'),(651,'Sexto'),(652,'Sexto'),(653,'Sexto'),(654,'Sexto'),(655,'Sexto'),(656,'Sexto'),(657,'Sexto'),(658,'Sexto'),(659,'Sexto'),(660,'Sexto'),(661,'Sexto'),(662,'Sexto'),(663,'Sexto'),(664,'Sexto');
 /*!40000 ALTER TABLE `grupo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -306,6 +310,7 @@ CREATE TABLE `supervisor` (
 
 LOCK TABLES `supervisor` WRITE;
 /*!40000 ALTER TABLE `supervisor` DISABLE KEYS */;
+INSERT INTO `supervisor` VALUES ('CXM995A41gDQfkIXAcqqApTajbRFCHNcNS9Y0yvICuM=','547$2y$10$xU8ZySLH7LRVo4YJ4.UXcO/uSYo8xx80UTxYzOi0xj84e5C8zl7m6',NULL),('xv1+DasZyVpfSXaUm1CkH3RjuiAjEOyDM/xv9WFvshM=','156$2y$10$YmZM2zUyhIRIN9rKKZBL7O4FUKIel6vy6dpIbmah/asGWkLZTwSB2',NULL);
 /*!40000 ALTER TABLE `supervisor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -344,4 +349,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-29 22:56:59
+-- Dump completed on 2020-05-30 21:05:31
