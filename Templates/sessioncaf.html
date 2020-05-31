@@ -2,25 +2,75 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>inicio</title>
+    <title>Inicio Sesión</title>
+    <link rel="stylesheet" type="text/css" href="../statics/css/formularioreg.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sacramento">
   </head>
   <body>
-    <form action='../Dynamics/cafeteria.php' method='post'>
-      <fieldset>
-        Usuario<input type='text' name='usuario'>
-        <br>Contraseña<input type='password' name='contraseña' pattern='[A-Za-z0-9@#$%?¡!&/=+*-]{10,25}' title='Una contraseña segura tiene uns longitud entre 10 y 25 caracteres, tiene almenos una letra mayúscula o minúscula, un dígito, o los símbolos @ # $ % ? ¡ ! & / = + * - '>
-        <br>Categoria: <select name='categoria'>
-          <option value='alumno' name='alumno'>Alumno</option>
-          <option value='trabajador' name='trabajador'>Trabajador</option>
-          <option value='profesor_o_funcionario' name='profesor_o_funcionario'>Profesor o funcionario</option><br>
-        </select>
-        <br>Tipo: <select name='tipo'>
-          <option value='Cliente' name='Cliente'>Cliente</option>
-          <option value='Supervisor de pedidos' name='Supervisor de pedidos'>Supervisor de pedidos</option>
-          <option value='Administrador de sistemas' name='Administrador de sistemas'>Administrador de sistemas</option><br>
-        </select>
-        <br><input type='submit' value='Ingresar'>
-      </fieldset>
-    </form>
+    <!--Header-->
+      <header>
+        <a id="logo-header" href="Principal.html"><img src="../statics/img/logo.png" class="logo">
+      </a>
+       <nav>
+        <ul>
+          <li><a href="../Dynamics/menu4.php"><i class="fa fa-cutlery"></i></a></li>
+          <li><a href="historia.html">Conócenos</a></li>
+          <li><a href="Mapa.html"><i class="fa fa-map-o"></i></a></li>
+          <li><a href="sessioncaf.html">Acceder</a></li>
+          <li><a href="RegistroCafe.html">Crear Cuenta</a></li>
+        </ul>
+      </nav>
+     </header>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <!--Formulario-->
+     <div>
+       <form action='../Dynamics/cafeteria.php' method='post'>
+         <fieldset>
+           <legend><h3>Iniciar sesión</h3></legend>
+            <br>
+            <!--Usuario-->
+            Usuario<input type='text' name='usuario' required>
+            <br>
+            <br>
+            <!--Contraseña-->
+            Contraseña<input type='password' name='contraseña' pattern='[A-Za-z0-9@#$%?¡!&/=+*-]{10,25}' title='Una contraseña segura tiene uns longitud entre 10 y 25 caracteres, tiene almenos una letra mayúscula o minúscula, un dígito, o los símbolos @ # $ % ? ¡ ! & / = + * - ' required>
+            <br>
+            <br>
+            <!--Categoría-->
+            Categoria: <select name='categoria'>
+              <option value='alumno' name='alumno'>Alumno</option>
+              <option value='trabajador' name='trabajador'>Trabajador</option>
+              <option value='profesor_o_funcionario' name='profesor_o_funcionario'>Profesor o funcionario</option><br>
+            </select>
+            <br>
+            <br>
+            <!--Tipo-->
+            Tipo: <select name='tipo'>
+               <option value='Cliente' name='Cliente'>Cliente</option>
+               <option value='Supervisor de pedidos' name='Supervisor de pedidos'>Supervisor de pedidos</option>
+               <option value='Administrador de sistemas' name='Administrador de sistemas'>Administrador de sistemas</option><br>
+            </select>
+            <br>
+            <br>
+            <br>
+            <input class='send' type='submit' value='Ingresar'>
+         </fieldset>
+      </form>
+    </div>
+<!--Footer-->
+<footer>
+    <nav>
+       <ul>
+          <li class="footer">Copyright &copy; 2020<li>
+          <li class="footer">Todos los derechos reservados.</li>
+       <ul>
+    </nav>
+</footer>
   </body>
 </html>
